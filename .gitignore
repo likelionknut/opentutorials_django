@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/django
-# Edit at https://www.gitignore.io/?templates=django
+# Created by https://www.gitignore.io/api/django,pycharm
+# Edit at https://www.gitignore.io/?templates=django,pycharm
 
 ### Django ###
 *.log
@@ -135,15 +135,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# End of https://www.gitignore.io/api/django
-
-
-##############################################################################
-# PyCharm
-
-# Created by https://www.gitignore.io/api/pycharm
-# Edit at https://www.gitignore.io/?templates=pycharm
-
 ### PyCharm ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
@@ -226,4 +217,4 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
-# End of https://www.gitignore.io/api/pycharm
+# End of https://www.gitignore.io/api/django,pycharm
