@@ -6,3 +6,6 @@ def index(request):
 
 def blogMain(request):
     return render(request, 'blogMain.html')
+
+def createBlog(request):
+    return render(request, 'createBlog.html')
