@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import CreateBlog
 
 # Create your views here.
 def index(request):
@@ -8,4 +9,6 @@ def blogMain(request):
     return render(request, 'blogMain.html')
 
 def createBlog(request):
-    return render(request, 'createBlog.html')
+    form = CreateBlog()
+
+    return render(request, 'createBlog.html', {'form': form})
