@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
 ]
 
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -129,3 +131,4 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
