@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import CreateBlog
 from .models import Blog
 
@@ -25,5 +25,7 @@ def createBlog(request):
         form = CreateBlog()
         return render(request, 'createBlog.html', {'form': form})
 
-def detail(request):
-    return render(request, 'detail.html')
+def detail(request, blog_id):
+    blog_detail = get_object_or_404(Blog, pk=blog_id)
+
+    return render(request, 'detail.html', {'blog_detail': blog_detail})
