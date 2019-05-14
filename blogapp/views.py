@@ -52,3 +52,6 @@ def detail(request, blog_id):
         }
 
         return render(request, 'detail.html', context)
+
+def oauth(request):
+    return redirect('blogMain')
