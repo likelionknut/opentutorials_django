@@ -63,4 +63,7 @@ def detail(request, blog_id):
         return render(request, 'detail.html', context)
 
 def oauth(request):
+    code = request.GET['code']
+    print('code = ' + str(code))
+
     return redirect('blogMain')
