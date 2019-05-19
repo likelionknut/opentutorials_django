@@ -38,7 +38,16 @@ def detail(request, blog_id):
 
             print(content)
 
-            return redirect('blogMain')
+            login_request_uri = 'https://kauth.kakao.com/oauth/authorize?'
+
+            client_id = '187fc792a19f9586952c9a8527459053'
+            redirect_uri = 'http://127.0.0.1:8000/oauth'
+
+            login_request_uri += 'client_id=' + client_id
+            login_request_uri += '&redirect_uri=' + redirect_uri
+            login_request_uri += '&response_type=code&scope=talk_message'
+
+            return redirect(login_request_uri)
         else:
             return redirect('blogMain')
 
