@@ -47,6 +47,9 @@ def detail(request, blog_id):
             login_request_uri += '&redirect_uri=' + redirect_uri
             login_request_uri += '&response_type=code&scope=talk_message'
 
+            request.session['client_id'] = client_id
+            request.session['redirect_uri'] = redirect_uri
+
             return redirect(login_request_uri)
         else:
             return redirect('blogMain')
@@ -65,5 +68,7 @@ def detail(request, blog_id):
 def oauth(request):
     code = request.GET['code']
     print('code = ' + str(code))
+
+
 
     return redirect('blogMain')
