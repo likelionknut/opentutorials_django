@@ -101,7 +101,7 @@ def oauth(request):
     print("profileImageURL = " + str(profileImageURL))
     print("thumbnailURL = " + str(thumbnailURL))
 
-    template_dict_data = {
+    template_dict_data = dict({
         "object_type": "feed",
         "content": {
             "title": "디저트 사진",
@@ -139,6 +139,8 @@ def oauth(request):
             }
             }
         ]
-    }
+    })
+
+    template_json_data = "template_object=" + str(json.dumps(template_dict_data))
 
     return redirect('blogMain')
