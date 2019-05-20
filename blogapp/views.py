@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import CreateBlog
 from .models import Blog, Comment
 from .forms import BlogCommentForm
+import requests
 
 # Create your views here.
 def index(request):
@@ -79,5 +80,11 @@ def oauth(request):
     access_token_request_uri += "&code=" + code
 
     print(access_token_request_uri)
+
+    access_token_request_uri_data = requests.get(access_token_request_uri)
+    json_data = access_token_request_uri_data.json()
+    access_token = json_data['access_token']
+    print(access_token)
+
 
     return redirect('blogMain')
