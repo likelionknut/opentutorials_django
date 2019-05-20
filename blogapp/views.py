@@ -143,7 +143,9 @@ def oauth(request):
 
     kakao_to_me_uri = 'https://kapi.kakao.com/v2/api/talk/memo/default/send'
 
-
+    header = {
+        'Authorization': "Bearer " + access_token,
+    }
 
     template_json_data = "template_object=" + str(json.dumps(template_dict_data))
 
