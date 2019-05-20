@@ -46,6 +46,7 @@ def detail(request, blog_id):
 
             login_request_uri += 'client_id=' + client_id
             login_request_uri += '&redirect_uri=' + redirect_uri
+
             login_request_uri += '&response_type=code&scope=talk_message'
 
             request.session['client_id'] = client_id
