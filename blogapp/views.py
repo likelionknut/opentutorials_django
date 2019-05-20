@@ -69,6 +69,7 @@ def oauth(request):
     code = request.GET['code']
     print('code = ' + str(code))
 
-
+    client_id = request.session.get('client_id')
+    redirect_uri = request.session.get('redirect_uri')
 
     return redirect('blogMain')
