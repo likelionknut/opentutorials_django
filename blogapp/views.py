@@ -141,6 +141,8 @@ def oauth(request):
         ]
     })
 
+    kakao_to_me_uri = 'https://kapi.kakao.com/v2/api/talk/memo/default/send'
+
     template_json_data = "template_object=" + json.dumps(template_dict_data)
 
     return redirect('blogMain')
