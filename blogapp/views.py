@@ -102,6 +102,7 @@ def oauth(request):
     print("thumbnailURL = " + str(thumbnailURL))
 
     template_dict_data = str({
+
         "object_type": "feed",
         "content": {
             "title": "디저트 사진",
@@ -110,10 +111,10 @@ def oauth(request):
             "image_width": 640,
             "image_height": 640,
             "link": {
-            "web_url": "http://www.daum.net",
-            "mobile_web_url": "http://m.daum.net",
-            "android_execution_params": "contentId=100",
-            "ios_execution_params": "contentId=100"
+                "web_url": "http://www.daum.net",
+                "mobile_web_url": "http://m.daum.net",
+                "android_execution_params": "contentId=100",
+                "ios_execution_params": "contentId=100"
             }
         },
         "social": {
@@ -125,18 +126,18 @@ def oauth(request):
         },
         "buttons": [
             {
-            "title": "웹으로 이동",
-            "link": {
-                "web_url": "http://www.daum.net",
-                "mobile_web_url": "http://m.daum.net"
-            }
+                "title": "웹으로 이동",
+                "link": {
+                    "web_url": "http://www.daum.net",
+                    "mobile_web_url": "http://m.daum.net"
+                }
             },
             {
-            "title": "앱으로 이동",
-            "link": {
-                "android_execution_params": "contentId=100",
-                "ios_execution_params": "contentId=100"
-            }
+                "title": "앱으로 이동",
+                "link": {
+                    "android_execution_params": "contentId=100",
+                    "ios_execution_params": "contentId=100"
+                }
             }
         ]
     })
@@ -144,10 +145,15 @@ def oauth(request):
     kakao_to_me_uri = 'https://kapi.kakao.com/v2/api/talk/memo/default/send'
 
     headers = {
-        'Content-Type': "application/x-www-form-urlencoded",
+        'Content-Type': "application/x-www-form-urlencoded; charset=utf-8",
         'Authorization': "Bearer " + access_token,
     }
 
     template_json_data = "template_object=" + json.dumps(template_dict_data)
+    template_json_data = template_json_data.replace("\"", "")
+    template_json_data = template_json_data.replace("'", "\"")
+
+    response = requests.request(method="POST", url=kakao_to_me_uri, data=template_json_data, headers=headers)
+    print(response.json())
 
     return redirect('blogMain')
