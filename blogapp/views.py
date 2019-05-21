@@ -141,6 +141,6 @@ def oauth(request):
         ]
     })
 
-
+    template_json_data = "template_object=" + json.dumps(template_dict_data)
 
     return redirect('blogMain')
