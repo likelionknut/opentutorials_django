@@ -145,7 +145,7 @@ def oauth(request):
     kakao_to_me_uri = 'https://kapi.kakao.com/v2/api/talk/memo/default/send'
 
     headers = {
-        'Content-Type': "application/x-www-form-urlencoded; charset=utf-8",
+        'Content-Type': "application/x-www-form-urlencoded",
         'Authorization': "Bearer " + access_token,
     }
 
